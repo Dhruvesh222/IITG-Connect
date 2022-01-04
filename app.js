@@ -15,7 +15,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // environment config
-dotenv.config({ path: './config/config.env' })
+dotenv.config();
 const PORT = process.env.PORT || 3000
 
 // passport config
