@@ -82,8 +82,8 @@ app.use('/users',usersroutes);
 app.use('/posts',postroutes); 
 
 // db configuration
-// const dbURI = process.env.MONGO_URX;
-const dbURI = `mongodb://localhost:27017/IITG-Connect`;
+const dbURI = process.env.MONGO_URX;
+// const dbURI = `mongodb://localhost:27017/IITG-Connect`;
 const bodyParser = require('body-parser');
 
 // body-parser json
