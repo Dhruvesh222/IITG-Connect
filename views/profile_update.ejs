@@ -1,0 +1,226 @@
+<!-- <a href="<%= userinfo.linkedin %>"><i class="fab fa-linkedin-in" style="font-size: 30px;"></i></a> -->
+<div class="container">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Update Profile</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="text-center">
+                <img src="" alt="preview image" id="preview-image" style="border-radius: 50%; width: 200px;height: 200px; object-fit: cover;display: none;">
+                <span id="preview-image-default-text" >image preview</span>
+            </div>
+            <div class="modal-body">
+                <form action="/users/update_name" method="POST" enctype="multipart/form-data">
+                    <div class="form-group ">
+                          <label for="name" class="form-label mt-2">Name</label>
+                            <input 
+                                type="name" 
+                                class="form-control" 
+                                id="name"
+                                name="name" 
+                                placeholder="Enter Name"
+                                value="<%= typeof userinfo!= 'undefined' ? userinfo.name : `` %>"   
+                            >
+                      </div>
+                    <div class="form-group ">
+                          <label for="email" class="form-label mt-2">Email</label>
+                            <input 
+                                type="name" 
+                                class="form-control" 
+                                id="email"
+                                name="email" 
+                                placeholder="Enter Name"
+                                value="<%= typeof userinfo!= 'undefined' ? userinfo.email : `` %>"   
+                            >
+                      </div>
+                    <div class="form-group ">
+                          <label for="profileImage_file" class="form-label mt-2">profile image</label>
+                            <input 
+                                type="file" 
+                                class="form-control" 
+                                id="profileImage_file"
+                                name="profileImage_file"   
+                            >
+                      </div>
+                          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row" style="height:80vh">
+        <div class="col-md-6 col-12 m-auto">
+            <div class="card card-body">
+                <img class="m-auto" src="/profile_images/<%= userinfo.profile_image %>" alt="profile pic"
+                    style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
+
+                <div class="display-info">
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;">NAME</span><br>
+                        <%= userinfo.name %>
+                    </div>
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;">EMAIL </span><br>
+                        <%= userinfo.email %>
+                    </div>
+                    <i class="fas fa-edit edit-icon" style="font-size: larger;" data-toggle="modal" data-target="#exampleModalCenter"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12 m-auto mt-3">
+            <div class="input-info card card-body">
+                <form action="/users/profile_update" method="POST">
+                    <%- include('./partials/messages.ejs') %>
+                    <div class="form-group form-field">
+                        <label for="roll" class="form-label mt-2">Roll No.</label>
+                        <input type="text" class="form-control" id="roll" name="roll"
+                            placeholder="enter roll no"
+                            value="<%= typeof userinfo != 'undefined' ? userinfo.roll : `` %>">
+                    </div>
+                        <div class="form-group form-field">
+                            <label for="codeforces" class="form-label mt-2"> Codeforces Handle</label>
+                            <input type="text" class="form-control" id="codeforces" name="codeforces" placeholder="Codeforces handle link"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.codeforces : `` %>">
+                                <span class="iconify" data-icon="simple-icons:codeforces" style="color: white;"></span>
+                        </div>
+                        <div class="form-group form-field">
+                            <label for="codechef" class="form-label mt-2"> Codechef Handle</label>
+                            <input type="text" class="form-control" id="codechef" name="codechef" placeholder="Codechef handle link"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.codechef : `` %>">
+                            <span class="iconify" data-icon="simple-icons:codechef" style="color: white;"></span>
+                        </div>
+                        <div class="form-group form-field">
+                            <label for="github" class="form-label mt-2"> Github</label>
+                            <input type="text" class="form-control" id="github" name="github" placeholder="Github link"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.github : `` %>">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="form-group form-field">
+                            <label for="insta" class="form-label mt-2">Instagram Handle</label>
+                            <input type="text" class="form-control" id="insta" name="insta" placeholder="instagram link"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.insta : `` %>">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="form-group form-field">
+                            <label for="facebook" class="form-label mt-2">Facebook </label>
+                            <input type="text" class="form-control" id="facebook" name="facebook"
+                                placeholder="facebook link"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.facebook : `` %>">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="form-group form-field">
+                            <label for="linkedin" class="form-label mt-2">LinkedIn</label>
+                            <input type="text" class="form-control" id="linkedin" name="linkedin"
+                                placeholder="linkedin link"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.linkedin : `` %>">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="form-group form-field">
+                            <label for="contact" class="form-label mt-2">Contact number</label>
+                            <input type="name" class="form-control" id="contact" name="contact"
+                                placeholder="enter your contact number"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.contact : `` %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="branch" class="form-label mt-2">Branch</label>
+                            <select name="branch" id="branch" class="form-select">
+                                <% if(userinfo.branch){ %>
+                                    <option selected disabled hidden><%= userinfo.branch %></option>
+                                <% } %>
+                                <option>CSE</option>
+                                <option>MnC</option>
+                                <option>ECE</option>
+                                <option>EEE</option>
+                                <option>BSBE</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="degree" class="form-label mt-2">Degree</label>
+                            <select name="degree" id="degree" class="form-select">
+                                <% if( userinfo.degree){ %>
+                                    <option selected disabled hidden><%= userinfo.degree %></option>
+                                <% } %>
+                                <option>M.Tech</option>
+                                <option>B.Tech</option>
+                                <option>Ph.D</option>
+                                <option>Research Scholar</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-field">
+                            <label for="degYear" class="form-label mt-2">Year of degree completion</label>
+                            <input type="text" class="form-control" id="degYear" name="degYear" 
+                            placeholder="YYYY" value="<%= typeof userinfo != 'undefined' ? userinfo.degYear : `` %>">
+                        </div>
+                        <!-- <div class="form-group form-field">
+                            <label for="birthdate" class="form-label mt-2">Birth Date</label>
+                            <input type="date" class="form-control" id="birthdate" name="birthdate"
+                                value="<%= typeof userinfo != 'undefined' ? userinfo.birthdate : `` %>">
+                        </div> -->
+                        <div class="form-group">
+                            <label for="clubs" class="form-label mt-2">Clubs</label>
+                            <select name="clubs" id="clubs" class="form-select" multiple="multiple">
+                                <option <%= userinfo.clubs.includes('E-cell') == true ? 'selected' : ''%> >E-cell</option>
+                                <option <%= userinfo.clubs.includes('Coding club') == true ? 'selected' : ''%> >Coding club</option>
+                                <option <%= userinfo.clubs.includes('FEC') == true ? 'selected' : ''%> >FEC</option>
+                                <option <%= userinfo.clubs.includes('Technothlon') == true ? 'selected' : ''%> >Technothlon</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skills" class="form-label mt-2">Skills</label>
+                            <select name="skills" id="skills" class="form-select" multiple="multiple">
+                                <option <%= userinfo.skills.includes('HTML') == true ? 'selected' : ''%> > HTML</option>
+                                <option <%= userinfo.skills.includes('CSS') == true ? 'selected' : ''%> >CSS</option>
+                                <option <%= userinfo.skills.includes('Javascript') == true ? 'selected' : ''%> >Javascript</option>
+                                <option <%= userinfo.skills.includes('Python') == true ? 'selected' : ''%> >Python</option>
+                                <option <%= userinfo.skills.includes('Nodejs') == true ? 'selected' : ''%> >Nodejs</option>
+                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >mongodb</option>
+                            </select>
+                        </div>
+
+
+
+
+
+                       
+                    </div>
+                    <button type="submit" class="col-12 btn btn-primary my-2 update-btn">Update</button>
+                </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const profileImage_file = document.getElementById('profileImage_file');
+    const preview_image = document.getElementById('preview-image');
+    const preview_image_default_text = document.getElementById('preview-image-default-text');
+    profileImage_file.addEventListener('change',function(){
+        const file = this.files[0];
+        console.log(file);
+        if(file){
+            const reader = new FileReader();
+            preview_image_default_text.style.display = "none";
+            preview_image.style.display = "block";
+            reader.readAsDataURL(file);
+            reader.addEventListener("load",function(){
+                console.log(this);
+                preview_image.setAttribute("src",this.result);
+            })
+        }else{
+            preview_image_default_text.style.display = "block";
+            preview_image.style.display = "none";
+            preview_image.setAttribute("src",'');
+        }
+    })
+
+    $('#degYear').datetimepicker({
+    format      :   "YYYY",
+    viewMode    :   "years", 
+});
+</script>

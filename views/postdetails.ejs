@@ -1,0 +1,74 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Are u sure to delete Post</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/posts/<%= post.id %>/delete" method="POST">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row my-2">
+        <!-- <input id="searchUser" class="col-md-8 col-12 m-auto  mt-2 " type="search" placeholder="Search" aria-label="Search"> -->
+        <%- include('./partials/messages.ejs') %>
+       
+
+        <div class="card card-body my-1 py-2 mx-1">
+            <!-- <%- include('./partials/messages.ejs') %> -->
+            <div class="blogs-title-author-date py-0 my-1 px-1">
+                <h1><%= post.title %></h1>
+                <div class="post-icons" style="text-align: right;">
+                    <% if(post.user_id!=userinfo.id){ %>
+                        <!-- <p class="my-0" title="Report"><i class="fas fa-flag"></i></p> -->
+                    <% }else{ %>
+                        <p class="my-0" data-toggle="modal" data-target="#exampleModalCenter" title="Delete" style="cursor: pointer;"><i class="fas fa-trash"></i></p>
+                        <a href="/posts/<%= post.id %>/update" title="Edit"><i class="fas fa-edit px-3 my-0" style="font-size: larger;"></i></a>
+                    <% } %>
+                </div>
+            </div>
+                <% if(post.user_id!=userinfo.id){ %>
+                    <p>—— by <%= viewUser.name %></p>
+                <% } %>
+                <p><%= post.description %></p>
+                <% if(post.user_id==userinfo.id){ %>
+                    <!-- <form action="/posts/<%= post.id %>/delete" method="POST">
+                        <button type="submit">delete post</button>
+                    </form> -->
+                <% } %>
+                <p style="text-align: right;" class="py-0 my-0"><%= (post.createdAt).toDateString() %></p>
+                <p style="text-align: right;" class="py-0 my-0">
+                    ( <%= (post.createdAt.getHours()<10) ? "0"+post.createdAt.getHours() : post.createdAt.getHours() %> : 
+                        <%= (post.createdAt.getMinutes()<10) ? "0"+post.createdAt.getMinutes() : post.createdAt.getMinutes() %> :
+                            <%= new Date(post.createdAt).getSeconds()<10 ? "0"+ new Date(post.createdAt).getSeconds() : new Date(post.createdAt).getSeconds() %> )
+                </p>
+        </div>
+    </div>
+</div>
+
+<script>
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
+}
+function printdate(date){
+    const d = new Date(date);
+    let h = addZero(d.getHours());
+    let m = addZero(d.getMinutes());
+    let s = addZero(d.getSeconds());
+    let time = h + ":" + m + ":" + s;
+    return time;
+}
+</script>

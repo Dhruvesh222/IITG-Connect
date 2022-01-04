@@ -1,16 +1,482 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%- include('./partials/head.ejs') %>
-<body>
-    <div class="login-register">
-        <form action="/" method="POST">
-            <!-- <label for="username">username</label> -->
-            <input type="text" placeholder="username" id="username" name="username" required>
-            <br>
-            <br>
-            <!-- <label for="password">Password</label> -->
-            <input type="password" placeholder="password" id="password" name="password" required>
-        </form>
+<!-- <div class="row mt-4">
+    <div class="col-md-6 col-12  m-auto">
+        <div class="card card-body text-center">
+            <h1>Connect IITG With <span style="color: red;">❤</span></h1>
+            <a href="users/login" class="btn btn-primary mb-2">Login</a>
+            <a href="users/register" class="btn btn-primary">Register</a>
+        </div>
     </div>
-</body>
-</html>
+</div> -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+</button> -->
+<!-- <h1 class="text-center mt-1">Welcome TO IITG-Connect</h1> -->
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="static/IITG1.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>slide 2</h5>
+                <p>info about that</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="static/IITG2.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>slide 2</h5>
+                <p>info about that</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="static/IITG4.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>slide 2</h5>
+                <p>info about that</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="font-size:50px"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" style="color: red !important;"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row mx-auto">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter1">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Coding Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/codingclub_logo.png" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Coding Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            Being Coding Club of a technical institution, we do pretty much everything and anything
+                            related to coding. Coding events, Workshops, Hackathons (48 hours non stop coding), contests
+                            are just to name a few. We believe in coding our problems away.
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://linktr.ee/codingclubiitg" target="_blank"><i
+                                    class="fab fa-wordpress"></i></a>
+                            <a href="https://www.instagram.com/codingclubiitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/codingclubiitg" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/coding-club-iitg/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter2">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">E-Cell</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/ecell_logo.png" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header py-2">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">E-Cell</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            E-Cell IITG is a non-profit student run organization where we crave and explore the
+                            constantly evolving world of entrepreneurship and start-up cult. In our quest to promote the
+                            spirit of entrepreneurship among the community, we try to answer essential questions like
+                            “How this realm of entrepreneurship affects us in our day-to-day lives?” and the likes of
+                            “Can I construct my start-up idea into a functional business model?” To spread this very
+                            essence, we host various seminars/webinars, lectures, podcasts and book summaries,
+                            innovative games, brainstorming sessions, competitions. Besides that, we host the most
+                            prominent annual entrepreneurial summit of the northeast, “UDGAM”, which includes numerous
+                            informative events about entrepreneurship.
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://www.ecelliitg.in/" target="_blank"><i class="fab fa-wordpress"></i></a>
+                            <a href="https://www.instagram.com/ecell_iitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/ecell.iitg" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/ecell-iitg/mycompany/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://twitter.com/ecelliitg" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter3">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Aeromodelling Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/aero_logo.png" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Aeromodelling Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            The Aeromodelling club works mainly on developing drone technology. We work on making drones
+                            autonomous and smart and also develop RC planes as a hobby.
+                            The Aim of Aeromodelling Club, IITG is to develop smart drones with an easy interface for
+                            common people to interact with drones. The motive behind this aim is that drone technology
+                            would revolutionize the tech industry in the next decade. Be it the transportation industry
+                            or agricultural industry, drone technology would have a huge impact on transforming tech
+                            industries. Aeromodelling Club aims to contribute to this transformation.
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://www.instagram.com/aeroclub.iitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/Aeroiitg" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/aeroiitg/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://twitter.com/AeroIITG" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter4">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Electronics Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/electronics_logo.png" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Electronics Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            The Electronics Club aims to provide students a platform and resources to gain practical
+                            skills and realize projects. We strive to teach and help students acquire new skills in an
+                            era of rapidly evolving technology. We believe in coming up with projects that are
+                            innovative and tackle real life problems. To achieve these objectives we conduct various
+                            lectures, workshops and mentorship programs to help students realize their projects. The
+                            mission of the club is to expose students to challenges and new technologies in the field of
+                            electronics and thus to nurture and develop their skill set in this arena. Regular meetings
+                            and mentorship programs will definitely help students to achieve their goals. The emphasis
+                            is on experimenting and learning, no experience is necessary but eagerness to learn is
+                            essential.
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://electronicsclubiitg.wordpress.com/2019/03/25/smart-farm-electronics-club-iit-guwahati/"
+                                target="_blank"><i class="fab fa-wordpress"></i></a>
+                            <a href="https://www.instagram.com/electronicsclubiitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/search/top?q=electronics%20club%20iit%20guwahati"
+                                target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/electronicsclubiitg/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter5">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Consulting and Ananlytics Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/cac_logo.jpg" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Consulting and Ananlytics Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            With the motto of promoting technology, creativity and innovation, the Technical Board
+                            understands and believes that this fast changing and evolving era is the perfect time to
+                            live in and step-up to shape our future by looking at the world as our playground!
+                            Many students have that creative urge in them ready to shoot out at any moment. They have
+                            dreamt and believed that they were supposed to do something amazing, special, important and
+                            outstanding and they were destined for success! Those who believe that they can innovate,
+                            create and build their own future, Technical Board provides them with both the opportunity
+                            and support to help them leave their mark, make a difference and leave their legacy by
+                            choice and not by chance!
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://iitg.ac.in/sa/caciitg/" target="_blank"><i
+                                    class="fab fa-wordpress"></i></a>
+                            <a href="https://www.instagram.com/caciitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/caciitg" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/caciitg/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter6">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Finance and Economics Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/fec_logo.jpg" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Finance and Economics Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            The Finance and Economics Club (FEC) functions as a platform for enthusiastic students to
+                            come together and learn the intriguing and fun world of finance, by organizing introductory
+                            sessions for people who are interested in finance but do not have any prior knowledge,
+                            through inviting Industry Leaders and alumni in the industry for insight into the latest
+                            industrial trends and holding lectures and discussions involving the latest happenings
+                            around the world.
+                            Our club was founded in 2014 and since then has progressed very much. In the recent 2 years
+                            the activities inside the club had increased exponentially.
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://www.instagram.com/fec_iitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/financeclubiitg" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/finance-and-economics-club-iitg/"
+                                target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter7">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Yuvaan : Robotics Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/robotics_logo.png" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter7" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Yuvaan : Robotics Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            The mission of IIT Guwahati's Robotics Club is to unite students in an educational
+                            environment and provide students a place to pursue their interest in mechanical, electronic,
+                            and software design by working on large and small scale robotics projects. Having said that
+                            we take pride in talking about our projects, be it autonomous bots, humanoids, swarm of tiny
+                            robots, robotic arms or aerial vehicles, we haven't left any stone unturned. However, the
+                            club provides much more than just technical growth to its members, from team-building to
+                            cooperation, from perseverance to sincerity, the club teaches you a myriad of interpersonal
+                            skills essential in daily life. The club is open to students with or without experience
+                            because, believe it or not, none of us had any idea of robotics when we first stepped into
+                            the club room, neither do we expect anything from you. You just need to show up and the club
+                            and its people will take care of the rest. The club's environment perpetuates the sharing of
+                            wisdom and experience amongst our members. We cater to every individual who ever wanted to
+                            design their own circuit and control their own bot.
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://www.iitg.ac.in/sa/roboclub/" target="_blank"><i
+                                    class="fab fa-wordpress"></i></a>
+                            <a href="https://www.instagram.com/roboclubiitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/groups/120490468075088" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/robotics-club-iitg/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter8">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Acumen : Science and Quiz Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="static/quiz_logo.jpg" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter8" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Acumen : Science and Quiz Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            Acumen, the quiz club is one of the oldest clubs in the campus. The primary aim of the club
+                            is to nurture and propagate a culture of quizzing in the institute. The club aims to evoke
+                            and sharpen innate logical reasoning skills employed in quizzing to contribute to the
+                            overall intellectual and cognitive development of the participants and club members.
+                            We don't quiz because it adds up to our CV or something. We don't quiz because we like
+                            impressing anyone. We do it, because we are unluckily, helplessly in love with it. And this
+                            love is what makes our club a family. We quizzers, a group of all-knowing knuckleheads, in
+                            the search of something greater in life. Perhaps one day we would find the answer to the
+                            universe itself? But I think we quizzers already know the quadraginta duo answer to it.
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://www.instagram.com/quizclub.iitg/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/groups/182451258489899" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" data-toggle="modal" data-target="#exampleModalCenter9">
+            <div class="card border-info mt-3" style="max-width: 20rem;">
+                <div class="card-header">Automobile Club</div>
+                <div class="card-body px-2 py-2">
+                    <img src="/static/racing_logo.png" alt="here is club logo">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter9" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Automobile Club</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body py-2 px-2">
+                            The Green Automobile Club, IITG has been organising various lectures and workshops since its
+                            inception to impart knowledge to the students and equip them with the knowledge of important
+                            design and simulation software which are an integral part of mechanical design process.
+                            With an aim of providing hands on experience of design and manufacturing of an automobile to
+                            the enthusiastic students, the team has participated in national competitions like FORMULA
+                            BHARAT 2017 (Team Evolution),SUPRA SAEINDIA 2018 & 2015(Team Evolution), BAJA SAEINDIA 2012
+                            (Team Srijan) and SAENIS Effi Cycle 2013-17 (Team Evolution).
+                            The Club aims to create sustainable solutions to the problems encountered in the transport
+                            industry
+                        </div>
+                        <div class="modal-footer py-1">
+                            <a href="https://www.instagram.com/iitg.racing/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/iitg.racing" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/iitgracing/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-2 mt-3">© 2021 Copyright:
+    <a href="#"> IITG-Connect</a>
+    <p>if you find any bug pls report it to <a href="mailto:dhruveshbhure9999@gmail.com">Send Email</a></p>
+</div>
+<!-- Copyright -->

@@ -1,0 +1,194 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* html{
+    font-size: 10px;    /* this is same as 62.5% */  
+    /* this is same as 1 rem */
+ 
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ff4500 !important;
+    /* overflow: hidden; */
+}
+.form-field{
+    position: relative;
+}
+.form-field i{
+    position: absolute;
+    bottom: 12px;
+    right: 10px;
+    font-size: 25px;
+}
+.form-field .iconify{
+    position: absolute;
+    bottom: 8px;
+    right: 6px;
+    font-size: 32px;
+}
+
+nav{
+    font-size: 120%;
+}
+.dropdown{
+    position:relative !important;
+}
+.dropdown-menu{
+    position: absolute !important;
+    top: 50px !important;
+    left:-10vw !important;
+}
+
+
+
+/* .fade{
+    opacity: 0 !important;
+} */
+
+/* club images on homepage */
+.modal{
+    background-color: rgba(92, 78, 78, 0.637);
+}
+.card-header{
+    font-size: 150%;
+}
+.card-body img{
+    width: 100%;
+    object-fit: cover;
+}
+.modal-footer i{
+    font-size: 32px;
+}
+.modal-footer a{
+    padding: 5px;
+}
+.modal-footer a i{
+    /* color: rgb(240, 88, 113); */
+}
+.modal-footer a i:hover{
+    /* color: rgb(240, 88, 113); */
+    color: rgb(0, 183, 255);
+}
+.modal-title{
+    font-size: 150%;
+    /* color: rgb(0, 183, 255); */
+}
+.modal-title:hover{
+    color: rgb(0, 183, 255);
+}
+.carousel-item img{
+    height: 80vh;
+    width: auto;
+    object-fit: cover;
+}
+
+.carousel{
+    margin: auto;
+    width: 85vw;
+}
+
+/* login css */
+.dflex{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.dflex div{
+    width: 47%;
+}
+
+.follow-myblogs{
+    justify-content: space-between;
+}
+
+
+
+
+
+/* user.ejs */
+.user-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.user-img{
+    flex : 1;
+    aspect-ratio: 1;
+    position: relative;
+}
+.user-img img{
+    object-fit: cover; 
+    border-radius: 50%; 
+    /* border: 5px solid yellow;  */
+    box-sizing: border-box; 
+    aspect-ratio: 1;
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+.user-info{
+    flex : 1.5;
+    /* border: 5px solid yellow; */
+}
+.dancing-border{
+    /* background-color: rgba(0, 0, 0, 0.582); */
+    z-index: 99;
+    width: 100%;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 5px solid red;
+    border-right: 5px solid yellow;
+    border-bottom: 5px solid blue;
+    border-left: 5px solid orange;
+    animation: dance-karo 2s linear 0s infinite;
+}
+@keyframes dance-karo {
+    100%{
+        transform: translateY(-50%) rotate(360deg) ;
+    }
+}
+
+
+.post-icons{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 25px;
+    /* font-size: 120%; */
+}
+
+.blogs-title-author-date{
+    display: flex; 
+    justify-content: space-between;
+}
+
+@media screen  and (max-width:768px){
+    .carousel-item img{
+        height: 60vh;
+    }
+    .carousel{
+        width: 100vw;
+    }
+    .user-img{
+        width: 100%;
+    }
+}
+@media screen  and (max-width:576px){
+    .blogs-title-author-date{
+        flex-direction: column;
+    }
+    .post-icons{
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 18px;
+    }
+}

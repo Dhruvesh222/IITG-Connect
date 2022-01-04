@@ -1,0 +1,126 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">change password</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/users/update_password" method="POST">
+                    <div class="form-group ">
+                          <label for="oldpassword" class="form-label mt-2">Old Password</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="oldpasswrod"
+                                name="oldpassword" 
+                                placeholder="Enter Name"
+                                value="<%= typeof userinfo!= 'undefined' ? `` : `` %>"   
+                            >
+                      </div>
+                    <div class="form-group ">
+                          <label for="password" class="form-label mt-2">New Password</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="passwrod"
+                                name="password" 
+                                placeholder="Enter new password"
+                                value="<%= typeof userinfo!= 'undefined' ? `` : `` %>"   
+                            >
+                      </div>
+                    <div class="form-group ">
+                          <label for="password1" class="form-label mt-2">Confirm Password</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="password1"
+                                name="password1"
+                                placeholder="Enter new password"
+                                value="<%= typeof userinfo!= 'undefined' ? `` : `` %>"   
+                            >
+                      </div>
+                          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-md-6 col-12 m-auto ">
+            <div class="card card-body py-2">
+                <%- include('./partials/messages.ejs') %>
+                <img class="m-auto" src="/static/icon.png" alt="there is a profile pic here"
+                style="border-radius: 50%; width: 200px;object-fit: contain;">
+                <div class="d-flex flex-row-reverse">
+                    <a href="/users/profile_update">
+                        <i class="fas fa-edit" style="font-size: larger;" data-toggle="modal"
+                        data-target="#exampleModalCenter"></i>
+                    </a>
+                </div>
+                <div class="row ">
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;">NAME</span><br>
+                        <%= userinfo.name %>
+                    </div>
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;">Roll No.</span><br>
+                        <%= userinfo.roll %>
+                    </div>
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;">Branch</span><br>
+                        <%= userinfo.branch %>
+                    </div>
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;">Degree</span><br>
+                        <%= userinfo.degree %>
+                    </div>
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;">EMAIL </span><br>
+                        <%= userinfo.email %>
+                    </div>
+                    <div class="mt-2 col-md-6 col-12 "><span style="font-weight: bold;"> </span><br>
+                        
+                    </div>
+                    <div class="mt-2 col-md-6 col-12 d-flex justify-content-between m-auto" style="font-size: 36px;">
+                        <% if(!userinfo.github){ %>
+                            <div><a  href="#"><i class="fab fa-github"></i></a></div>
+                        <% }else{ %>
+                            <div><a  href="<%= userinfo.github %>" target="blank"><i class="fab fa-github"></i></a></div>
+                        <% } %>
+
+                        <% if(!userinfo.insta){ %>
+                            <div><a  href="#"><i class="fab fa-instagram"></i></a></div>
+                        <% }else{ %>
+                            <div><a  href="<%= userinfo.insta %>" target="blank"><i class="fab fa-instagram"></i></a></div>
+                        <% } %>
+
+                        <% if(!userinfo.linkedin){ %>
+                            <div><a  href="#"><i class="fab fa-linkedin"></i></a></div>
+                        <% }else{ %>
+                            <div><a  href="<%= userinfo.linkedin %>" target="blank"><i class="fab fa-linkedin"></i></a></div>
+                        <% } %>
+
+                        <% if(!userinfo.facebook){ %>
+                            <div><a  href="#"><i class="fab fa-facebook"></i></a></div>
+                        <% }else{ %>
+                            <div><a  href="<%= userinfo.facebook %>" target="blank"><i class="fab fa-facebook"></i></a></div>
+                        <% } %>
+
+                        
+                        
+                        
+                        <!-- <div><a  href="<%= userinfo.github %>" target="blank"><i class="fab fa-github"></i></a></div>
+                        <div><a  href="<%= userinfo.insta %>" target="blank"><i class="fab fa-instagram"></i></a></div>
+                        <div><a  href="<%= userinfo.linkedin %>" target="blank"><i class="fab fa-linkedin"></i></a></div>
+                        <div><a  href="<%= userinfo.facebook %>" target="blank"><i class="fab fa-facebook"></i></a></div> -->
+                    </div>
+                </div>
+                <p class="col-12 btn btn-primary py-1 mt-1" data-toggle="modal" data-target="#exampleModalCenter">Change Password</p>
+                <a href="/users/logout" class="col-12 btn btn-primary py-1">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>

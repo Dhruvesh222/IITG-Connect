@@ -1,0 +1,25 @@
+
+<div class="container">
+    <input id="searchUser" class="col-md-12 col-12 m-auto  mt-2 form-control" type="search" placeholder="Advance Search by author || post title || post desciption" aria-label="Search" style="display: block;">
+    <div class="row mt-2">
+        <%- include('./partials/messages.ejs') %>
+            <% postsarray.forEach((post)=>{ %>
+                <a href="/posts/<%= post._id %>" style="text-decoration: none;" class="allusers col-md-8 col-12 m-auto">
+                    <p style="display: none;" class="forsearch"><%= post.author %> <%= post.title %> <%= post.description %> </p>
+                <div class="" >
+                    <div class="card card-body mt-1 py-1 px-2">
+                            <h1 class="mb-1"><%= post.title %></h1>
+                            <div class="blogs-title-author-date">
+                                <p class="py-0 my-0">—— by <%= post.author %></p>
+                                <p class="py-0 my-0"><%= (post.createdAt).toDateString() %></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            <% }) %>
+
+            <% if(postsarray.length==0){ %>
+                <h5> follow other users to get their post here in feed </h5>
+            <% } %>
+    </div>
+</div>

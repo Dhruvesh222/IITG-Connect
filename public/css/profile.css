@@ -1,0 +1,30 @@
+.display-info{
+    position: relative;
+}
+
+.edit-icon{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+.input-info{
+    overflow-y: auto; 
+    height: 75vh;
+}
+html body .small-update-btn{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .input-info{
+        overflow-y: unset;
+        height: 100%;
+    }
+    .update-btn{
+        display: none;
+    }
+    .small-update-btn{
+        display: block;
+    }
+}

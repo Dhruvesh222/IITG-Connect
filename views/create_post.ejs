@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-md-6 col-12 m-auto" >
+            <div class="card card-body py-2">
+                
+                <% if(postinfo==undefined){ %>
+                    <form action="/posts" method="POST">
+                <% }else{ %>
+                    <form action="/posts/<%= postinfo.id %>/update" method="POST">
+                <% } %>
+                    <fieldset>
+                        <% if(postinfo==undefined){ %>
+                            <legend><h1 class="text-center">Create Post</h1></legend>
+                        <% }else{ %>
+                            <legend><h1 class="text-center">Update Post</h1></legend>
+                        <% } %>
+
+                        <%- include('./partials/messages.ejs') %>
+                        <div class="form-group ">
+                            <label for="title" class="form-label removeinsec">Title</label>
+                                <input 
+                                    type="name" 
+                                    class="form-control" 
+                                    id="title"
+                                    name="title" 
+                                    placeholder="Enter Title"
+                                    value="<%= typeof postinfo!= 'undefined' ? postinfo.title : `` %>"
+                                >
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="form-label mt-4">Post Description</label>
+                            <textarea class="form-control" id="description" name="description" rows="10" style="margin-top: 0px; margin-bottom: 0px;"><%= typeof postinfo!= 'undefined' ? postinfo.description : `` %></textarea>
+                        </div>
+                    </fieldset>
+                        <% if(postinfo==undefined){ %>
+                            <button type="submit" class="col-12 btn btn-primary mt-2">Post</button>
+                        <% }else{ %>
+                            <button type="submit" class="col-12 btn btn-primary mt-2">Update Post</button>
+                        <% } %>
+                  </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    </div>
+    <script src="/js/dismiss.js"></script>
+   

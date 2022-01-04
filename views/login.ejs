@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="row mt-3">
+        <div class="col-md-6 col-12 m-auto" >
+            <div class="card card-body ">
+                <form action="/users/login" method="POST">
+                    <%- include('./partials/messages.ejs') %>
+                    <fieldset>
+                        <legend><h1 class="text-center">Login</h1></legend>
+                        <div class="form-group">
+                            <label for="email" class="form-label mt-2">Email address</label>
+                            <input 
+                            type="email" 
+                            class="form-control" 
+                            id="email" 
+                            name="email"
+                            aria-describedby="emailHelp" 
+                            placeholder="Enter email"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label mt-2">Password</label>
+                            <input 
+                            type="password" 
+                            class="form-control" 
+                            id="password" 
+                            name="password"
+                            placeholder="Enter Password"
+                            >
+                        </div>
+                        <button type="submit" class="col-12 btn btn-primary mt-2">Login</button>
+                    </form>
+                    <!-- <div class="dflex">
+                        <div class=" text-center mt-2" style="background-color: red;color: aliceblue;border-radius: 10px;box-sizing: border-box;">
+                            <a href="/google">sign in using google</a>
+                        </div>
+                        <div class=" text-center mt-2" style="background-color: black;color: aliceblue;border-radius: 10px; box-sizing: border-box;">
+                            <a href="/">sign in using microsoft</a>
+                        </div>
+                    </div> -->
+                    <p class="lead mt-2">Don't have an Account ? &nbsp;<a href="/users/register" style="font-weight: 400; letter-spacing: 1px;">Register</a></p>
+                </div>
+            </div>
+        </div>
+
+</div>

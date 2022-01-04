@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-primary py-1">
+    <div class="container">
+        <% if(typeof(userinfo)=='undefined') { %>
+            <a class="navbar-brand" href="/" style="font-size: 120%;" >Connect IITG</a>
+        <% }else{ %>
+                <a class="navbar-brand" href="/users" style="font-size: 120%;">Connect IITG</a>
+        <% } %>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-info"></span>
+      </button> -->
+      <button class="navbar-toggler py-0 px-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="#navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars" style="vertical-align: middle; font-size: 30px;"></i></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <% if(typeof(userinfo)=='undefined'){ %>
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="/users/register">Register
+                <!-- <span class="visually-hidden">(current)</span> -->
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/login">Login</a>
+            </li>
+            </ul>
+        <% }else{ %>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <span class="nav-link active" href="#">Welcome <%= userinfo.name %>
+                         <!-- <span class="visually-hidden">(current)</span> -->
+                    </span>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-tie"></i></a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/users/profile">Profile</a>
+                      <a class="dropdown-item" href="/">Home</a>
+                      <a class="dropdown-item" href="/posts">want to post something</a>
+                      <a class="dropdown-item" href="/dashboard">followers posts</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/users/logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <% } %>  
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,45 @@
+<div class="container">
+    <input id="searchUser" class="col-md-12 col-12 m-auto  mt-2 form-control" type="search" placeholder="Advance Search by name || branch name || email || contact || degree" aria-label="Search" style="display: block;">
+    <div class="row mt-2">
+        <% usersarray.forEach((user)=>{ %>
+            <% if(userinfo.id != user.id){ %>
+                <div class="col-12 col-sm-6 col-lg-6  col-xl-4 m-auto allusers">
+                    <p style="display: none;" class="forsearch"><%= user.name %> <%= user.branch %> <%= user.email %> <%= user.degree %> <%= user.contact %></p>
+                    <a href="/users/<%= user.id %>" style="text-decoration: none;">
+                        <div class="user-wrap alert mt-1 py-2 px-1">
+                            <div class="user-img">
+                                <img src="/profile_images/<%= user.profile_image %>" alt="" width="100%" >
+                                <div class="dancing-border"></div>
+                            </div>
+                            <div class="user-info ">
+                                <h5 class="text-center" ><%= user.name %></h5>
+                                <div class="row px-1">
+                                    <div class="mb-1 col-md-6 col-12 text-center"><span style="font-weight: bold;"> <%= user.degree %></span>
+                                       
+                                    </div>
+                                    <div class="mb-1 col-md-6 col-12 text-center"><span style="font-weight: bold;"> <%= user.branch %></span>
+                                        
+                                    </div>
+                                    <div class=" col-md-12 col-12 " style="text-align: center;"><span style="font-weight: bold;"><%= user.followers.length %></span>
+                                        <% if(user.followers.length > 1){ %>
+                                            Followers
+                                        <% }else{ %>
+                                            Follower
+                                        <% } %>
+                                    </div>
+                                    <div class=" col-md-12 col-12 " style="text-align: center;"><span style="font-weight: bold;"><%= user.following.length %></span>
+                                        <% if(user.following.length > 1){ %>
+                                            Followings
+                                        <% }else{ %>
+                                            Following
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+</div>

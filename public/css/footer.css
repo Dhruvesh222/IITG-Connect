@@ -1,0 +1,6 @@
+.footer-copyright{
+    width: 99%;
+    /* border: 2px solid red; */
+    box-shadow: -1px -1px 20px 3px rgb(255, 93, 247),1px -1px 20px 3px rgb(0, 204, 255);
+    margin: auto;
+}
