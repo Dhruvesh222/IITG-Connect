@@ -15,9 +15,11 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // environment config
-dotenv.config();
-const PORT = process.env.PORT || 3000
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config({ path: './config/config.env' })
+}
 
+const PORT = process.env.PORT || 3000;
 // passport config
 require('./config/passport')(passport);
 
@@ -44,10 +46,10 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended:true}));
 
 // mongostore 
-var store = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/IITG-Connect',
-    collection: 'mySessions'
-  });
+// var store = new MongoDBStore({
+//     uri: 'mongodb://localhost:27017/IITG-Connect',
+//     collection: 'mySessions'
+//   });
 
 //express session middleware
 app.use(session({
@@ -55,7 +57,7 @@ app.use(session({
     secret: ' write anything ',
     resave: false,
     saveUninitialized: false,
-    store: store,
+    // store: store,
     // cookie: { maxAge: 60000 },
     // rolling: true,
     // sameSite : true

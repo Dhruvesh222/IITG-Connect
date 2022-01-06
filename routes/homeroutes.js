@@ -12,17 +12,17 @@ const { findById } = require('../models/User');
 router.get('/',(req,res)=>{
     // console.log(req.user)
     // console.log(process.env.PORT);
-    console.log(__dirname);
-    req.session.isAuth = true;
-    console.log(req.session.id);
-    if(req.session.page_views){
-        console.log("visited the page for ",req.session.page_views++);
-        console.log(req.session.secret);
-        console.log(req.session.cookie.maxAge);
-    }else{
-        req.session.page_views = 1;
-        console.log("you visted the page for the first time");
-    }
+    // console.log(__dirname);
+    // req.session.isAuth = true;
+    // console.log(req.session.id);
+    // if(req.session.page_views){
+    //     console.log("visited the page for ",req.session.page_views++);
+    //     console.log(req.session.secret);
+    //     console.log(req.session.cookie.maxAge);
+    // }else{
+    //     req.session.page_views = 1;
+    //     console.log("you visted the page for the first time");
+    // }
     res.render('index',{
         userinfo : req.user
     });
