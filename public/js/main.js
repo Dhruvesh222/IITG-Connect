@@ -5,7 +5,7 @@ searchUser.addEventListener('input',()=>{
     // console.log(forsearch);
     Array.from(allusers).forEach((element)=>{
         let content = element.querySelector('.forsearch').innerHTML.toLowerCase();
-        console.log(element,content,inputvalue);
+        // console.log(element,content,inputvalue);
         if(content.includes(inputvalue)){
             element.style.display = "block";
         }else{

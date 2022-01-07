@@ -3,13 +3,22 @@
     <div class="row my-1">
         <div class="card card-body mt-1 py-2 text-center ">
                 <% if(userinfo.id!=viewUser.id){ %>
-                    <h1><%= viewUser.name %>'s Blogs</h1>
+                    <h1><%= viewUser.name %>'s Posts</h1>
                 <% }else{ %>
-                    <h1>My blogs</h1>
+                    <h1>My Posts</h1>
                 <% } %>
         </div>
     </div>
     <input id="searchUser" class="col-md-12 col-12 m-auto  mt-2 form-control" type="search" placeholder="Advance Search by author || post title || post desciption" aria-label="Search" style="display: block;">
+
+    <% if(userinfo.id==viewUser.id){ %>
+        <div class="d-flex flex-row-reverse my-1">
+            <a href="/posts" class="btn btn-primary py-1" style="text-decoration: none;border-radius: 10px;">
+                post something
+            </a>
+        </div>
+    <% } %>
+        
     <div class="row my-1">
         <!-- <input id="searchUser" class="col-md-8 col-12 m-auto  mt-2 " type="search" placeholder="Search" aria-label="Search"> -->
         <%- include('./partials/messages.ejs') %>
@@ -20,7 +29,11 @@
                     <div class="card card-body mt-1 py-1 px-2">
                             <h1 class="mb-1"><%= post.title %></h1>
                             <div class="blogs-title-author-date">
-                                <p class="py-0 my-0">—— by <%= post.author %></p>
+                                <% if(post.author!=userinfo.name){ %>
+                                    <p class="py-0 my-0">—— by <%= post.author %></p>
+                                <% }else{ %>
+                                    <p class="py-0 my-0"></p>
+                                <% } %>
                                 <p class="py-0 my-0"><%= (post.createdAt).toDateString() %></p>
                             </div>
                         </div>

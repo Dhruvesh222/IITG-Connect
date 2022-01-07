@@ -2,9 +2,6 @@
 <div class="row mt-2">
     <div class="col-md-6 col-12 m-auto" >
         <div class="card card-body py-2">
-          <div id="dismissAlert">
-
-          </div>
             <form action="/users/register" method="POST">
                 <fieldset>
                   <legend><h1 class="text-center">Register</h1></legend>
@@ -35,7 +32,7 @@
                     >
                     <div class="invalid-feedback" id="emailinvalid"></div>
                     <div class="valid-feedback" id="emailvalid"></div>
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                   </div>
                   <div class="form-group">
                     <label for="password" class="form-label mt-2">Password</label>
@@ -47,6 +44,8 @@
                         placeholder="Create Password"
                         value="<%= typeof password1 != 'undefined' ? password1 : `` %>" required
                     >
+                    <div class="invalid-feedback" id="passwordinvalid"></div>
+                    <div class="valid-feedback" id="passwordvalid"></div>
                   </div>
                   <div class="form-group">
                     <label for="password2" class="form-label mt-2">confirm Password</label>
@@ -58,9 +57,11 @@
                         placeholder="Confirm Password"
                         value="<%= typeof password2 != 'undefined' ? password2 : `` %>" required
                     >
+                    <div class="invalid-feedback" id="password2invalid"></div>
+                    <div class="valid-feedback" id="password2valid"></div>
                   </div>
                   
-                  <button type="submit" class="col-12 btn btn-primary mt-2">Register</button>
+                  <button type="submit" id="regbtn" class="col-12 btn btn-primary mt-2" disabled>Register</button>
               </form>
               <p class="lead mt-2 py-0">Already have an Account ? &nbsp;<a href="/users/login"  style="font-weight: 400; letter-spacing: 1px;">Login</a></p>
         </div>

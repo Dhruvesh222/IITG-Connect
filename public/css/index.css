@@ -171,6 +171,13 @@ nav{
     justify-content: space-between;
 }
 
+
+/* form validation on register page */
+.invalid-feedback{
+    color: white !important;
+    font-size: 120%;
+}
+
 @media screen  and (max-width:768px){
     .carousel-item img{
         height: 60vh;

@@ -10,14 +10,14 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="text-center">
+            <div class="text-center m-auto">
                 <img src="" alt="preview image" id="preview-image" style="border-radius: 50%; width: 200px;height: 200px; object-fit: cover;display: none;">
                 <span id="preview-image-default-text" >image preview</span>
             </div>
             <div class="modal-body">
                 <form action="/users/update_name" method="POST" enctype="multipart/form-data">
                     <div class="form-group ">
-                          <label for="name" class="form-label mt-2">Name</label>
+                          <label for="name" class="form-label mt-0">Name</label>
                             <input 
                                 type="name" 
                                 class="form-control" 
@@ -48,7 +48,7 @@
                             >
                       </div>
                           <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary mt-2">Save changes</button>
                     
                 </form>
             </div>
@@ -58,7 +58,7 @@
     <div class="row" style="height:80vh">
         <div class="col-md-6 col-12 m-auto">
             <div class="card card-body">
-                <img class="m-auto" src="/profile_images/<%= userinfo.profile_image %>" alt="profile pic"
+                <img class="m-auto" src="/profile_images/<%= userinfo.profile_image %>" onerror="this.onerror=null;this.src = '/profile_images/default.png';" alt="profile pic"
                     style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
 
                 <div class="display-info">
@@ -88,24 +88,32 @@
                             <input type="text" class="form-control" id="codeforces" name="codeforces" placeholder="Codeforces handle link"
                                 value="<%= typeof userinfo != 'undefined' ? userinfo.codeforces : `` %>">
                                 <span class="iconify" data-icon="simple-icons:codeforces" style="color: white;"></span>
+                            <div class="invalid-feedback" id="codeforcesinvalid"></div>
+                            <div class="valid-feedback" id="codeforcesvalid"></div>
                         </div>
                         <div class="form-group form-field">
                             <label for="codechef" class="form-label mt-2"> Codechef Handle</label>
                             <input type="text" class="form-control" id="codechef" name="codechef" placeholder="Codechef handle link"
                                 value="<%= typeof userinfo != 'undefined' ? userinfo.codechef : `` %>">
                             <span class="iconify" data-icon="simple-icons:codechef" style="color: white;"></span>
+                            <div class="invalid-feedback" id="codechefinvalid"></div>
+                            <div class="valid-feedback" id="codechefvalid"></div>
                         </div>
                         <div class="form-group form-field">
                             <label for="github" class="form-label mt-2"> Github</label>
                             <input type="text" class="form-control" id="github" name="github" placeholder="Github link"
                                 value="<%= typeof userinfo != 'undefined' ? userinfo.github : `` %>">
                             <i class="fab fa-github"></i>
+                            <div class="invalid-feedback" id="githubinvalid"></div>
+                            <div class="valid-feedback" id="githubvalid"></div>
                         </div>
                         <div class="form-group form-field">
                             <label for="insta" class="form-label mt-2">Instagram Handle</label>
                             <input type="text" class="form-control" id="insta" name="insta" placeholder="instagram link"
                                 value="<%= typeof userinfo != 'undefined' ? userinfo.insta : `` %>">
                             <i class="fab fa-instagram"></i>
+                            <div class="invalid-feedback" id="instainvalid"></div>
+                            <div class="valid-feedback" id="instavalid"></div>
                         </div>
                         <div class="form-group form-field">
                             <label for="facebook" class="form-label mt-2">Facebook </label>
@@ -113,6 +121,8 @@
                                 placeholder="facebook link"
                                 value="<%= typeof userinfo != 'undefined' ? userinfo.facebook : `` %>">
                             <i class="fab fa-facebook"></i>
+                            <div class="invalid-feedback" id="facebookinvalid"></div>
+                            <div class="valid-feedback" id="facebookvalid"></div>
                         </div>
                         <div class="form-group form-field">
                             <label for="linkedin" class="form-label mt-2">LinkedIn</label>
@@ -120,12 +130,16 @@
                                 placeholder="linkedin link"
                                 value="<%= typeof userinfo != 'undefined' ? userinfo.linkedin : `` %>">
                             <i class="fab fa-linkedin"></i>
+                            <div class="invalid-feedback" id="linkedininvalid"></div>
+                            <div class="valid-feedback" id="linkedinvalid"></div>
                         </div>
                         <div class="form-group form-field">
                             <label for="contact" class="form-label mt-2">Contact number</label>
-                            <input type="name" class="form-control" id="contact" name="contact"
+                            <input type="text" class="form-control" id="contact" name="contact"
                                 placeholder="enter your contact number"
                                 value="<%= typeof userinfo != 'undefined' ? userinfo.contact : `` %>">
+                            <div class="invalid-feedback" id="contactinvalid"></div>
+                            <div class="valid-feedback" id="contactvalid"></div>
                         </div>
                         <div class="form-group">
                             <label for="branch" class="form-label mt-2">Branch</label>
@@ -164,6 +178,7 @@
                         </div> -->
                         <div class="form-group">
                             <label for="clubs" class="form-label mt-2">Clubs</label>
+                            <small class="form-text text-muted">&nbsp; Hold ctrl to select more than one option</small>
                             <select name="clubs" id="clubs" class="form-select" multiple="multiple">
                                 <option <%= userinfo.clubs.includes('E-cell') == true ? 'selected' : ''%> >E-cell</option>
                                 <option <%= userinfo.clubs.includes('Coding club') == true ? 'selected' : ''%> >Coding club</option>
@@ -171,9 +186,10 @@
                                 <option <%= userinfo.clubs.includes('Technothlon') == true ? 'selected' : ''%> >Technothlon</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="skills" class="form-label mt-2">Skills</label>
+                            <small class="form-text text-muted">&nbsp; Hold ctrl to select more than one option</small>
                             <select name="skills" id="skills" class="form-select" multiple="multiple">
                                 <option <%= userinfo.skills.includes('HTML') == true ? 'selected' : ''%> > HTML</option>
                                 <option <%= userinfo.skills.includes('CSS') == true ? 'selected' : ''%> >CSS</option>
@@ -190,26 +206,26 @@
 
                        
                     </div>
-                    <button type="submit" class="col-12 btn btn-primary my-2 update-btn">Update</button>
+                    <button type="submit" class="col-12 btn btn-primary my-2 update-btn" id="updatebtn">Update</button>
                 </form>
         </div>
     </div>
 </div>
-
+<script src="/js/profileupdatevalidation.js"></script>
 <script>
     const profileImage_file = document.getElementById('profileImage_file');
     const preview_image = document.getElementById('preview-image');
     const preview_image_default_text = document.getElementById('preview-image-default-text');
     profileImage_file.addEventListener('change',function(){
         const file = this.files[0];
-        console.log(file);
+        // console.log(file);
         if(file){
             const reader = new FileReader();
             preview_image_default_text.style.display = "none";
             preview_image.style.display = "block";
             reader.readAsDataURL(file);
             reader.addEventListener("load",function(){
-                console.log(this);
+                // console.log(this);
                 preview_image.setAttribute("src",this.result);
             })
         }else{
@@ -218,9 +234,4 @@
             preview_image.setAttribute("src",'');
         }
     })
-
-    $('#degYear').datetimepicker({
-    format      :   "YYYY",
-    viewMode    :   "years", 
-});
 </script>

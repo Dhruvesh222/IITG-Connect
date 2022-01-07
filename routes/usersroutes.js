@@ -131,7 +131,7 @@ router.get("/profile_update", ensureAuthenticated, (req, res) => {
 
 // update profile
 router.post('/profile_update',ensureAuthenticated,(req,res)=>{
-  const {roll,github,linkedin,insta,facebook,branch,degree,clubs,skills,contact,degYear,birthdate} = req.body;
+  const {roll,github,linkedin,insta,facebook,branch,degree,clubs,skills,contact,degYear,birthdate,codeforces,codechef} = req.body;
   User.findByIdAndUpdate({_id:req.user.id},
     {
       $set: {
@@ -146,7 +146,9 @@ router.post('/profile_update',ensureAuthenticated,(req,res)=>{
       skills,
       contact,
       degYear,
-      birthdate
+      birthdate,
+      codeforces,
+      codechef
       }
     }).then(result=>{
       console.log(result);

@@ -44,7 +44,7 @@
 
                         <!-- <%- include('./partials/messages.ejs') %> -->
                         <%- include('./partials/messages.ejs') %>
-                        <img class="m-auto" src="/profile_images/<%= viewUser.profile_image %>" alt="profile pic"
+                        <img class="m-auto" src="/profile_images/<%= viewUser.profile_image %>" onerror="this.onerror=null;this.src = '/profile_images/default.png';" alt="profile pic"
                             style="border-radius: 50%; width: 200px;height: 200px; object-fit: cover;">
 
 
@@ -74,7 +74,7 @@
                         <!-- for now everyone can see the blogs of yours -->
                         <div class="d-flex flex-row-reverse my-1 follow-myblogs">
                             <a href="/users/<%= viewUser._id %>/posts" class="btn btn-primary py-0" style="text-decoration: none;border-radius: 10px;">
-                                myblogs
+                                my posts
                             </a>
                             <% if(userinfo.id!=viewUser.id){ %>
                                 <div>
