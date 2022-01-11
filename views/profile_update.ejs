@@ -200,10 +200,23 @@
                             <label for="clubs" class="form-label mt-2">Clubs</label>
                             <small class="form-text text-muted">&nbsp; Hold ctrl to select more than one option</small>
                             <select name="clubs" id="clubs" class="form-select" multiple="multiple">
-                                <option <%= userinfo.clubs.includes('E-cell') == true ? 'selected' : ''%> >E-cell</option>
+                                <option <%= userinfo.clubs.includes('Aeromodelling Club') == true ? 'selected' : ''%> >Aeromodelling Club</option>
+                                <option <%= userinfo.clubs.includes('Automobile Club') == true ? 'selected' : ''%> >Automobile Club</option>
+                                <option <%= userinfo.clubs.includes('Acumen') == true ? 'selected' : ''%> >Acumen</option>
+                                <option <%= userinfo.clubs.includes('Anchorenza') == true ? 'selected' : ''%> >Anchorenza</option>
                                 <option <%= userinfo.clubs.includes('Coding club') == true ? 'selected' : ''%> >Coding club</option>
+                                <option <%= userinfo.clubs.includes('CnA Club') == true ? 'selected' : ''%> >CnA Club</option>
+                                <option <%= userinfo.clubs.includes('Cadence') == true ? 'selected' : ''%> >Cadence</option>
+                                <option <%= userinfo.clubs.includes('E-Cell') == true ? 'selected' : ''%> >E-Cell</option>
+                                <option <%= userinfo.clubs.includes('Electronics Club') == true ? 'selected' : ''%> >Electronics Club</option>
                                 <option <%= userinfo.clubs.includes('FEC') == true ? 'selected' : ''%> >FEC</option>
-                                <option <%= userinfo.clubs.includes('Technothlon') == true ? 'selected' : ''%> >Technothlon</option>
+                                <option <%= userinfo.clubs.includes('Fine Arts Club') == true ? 'selected' : ''%> >Fine Arts Club</option>
+                                <option <%= userinfo.clubs.includes('Litsoc') == true ? 'selected' : ''%> >Litsoc</option>
+                                <option <%= userinfo.clubs.includes('Lumiere') == true ? 'selected' : ''%> >Lumiere</option>
+                                <option <%= userinfo.clubs.includes('Montage') == true ? 'selected' : ''%> >Montage</option>
+                                <option <%= userinfo.clubs.includes('Octaves') == true ? 'selected' : ''%> >Octaves</option>
+                                <option <%= userinfo.clubs.includes('Robotics Club') == true ? 'selected' : ''%> >Robotics Club</option>
+                                <option <%= userinfo.clubs.includes('Xpression') == true ? 'selected' : ''%> >Xpression</option>
                             </select>
                         </div>
                         
@@ -211,16 +224,22 @@
                             <label for="skills" class="form-label mt-2">Skills</label>
                             <small class="form-text text-muted">&nbsp; Hold ctrl to select more than one option</small>
                             <select name="skills" id="skills" class="form-select" multiple="multiple">
+                                <option <%= userinfo.skills.includes('App developer') == true ? 'selected' : ''%> >App developer</option>
+                                <option <%= userinfo.skills.includes('Backend developer') == true ? 'selected' : ''%> >Backend developer</option>
+                                <option <%= userinfo.skills.includes('Blockchain Developer') == true ? 'selected' : ''%> >Blockchain Developer</option>
                                 <option <%= userinfo.skills.includes('C/C++') == true ? 'selected' : ''%> >C/C++</option>
-                                <option <%= userinfo.skills.includes('Python') == true ? 'selected' : ''%> >Python</option>
+                                <option <%= userinfo.skills.includes('Cyber Security') == true ? 'selected' : ''%> >Cyber Security</option>
+                                <option <%= userinfo.skills.includes('Django') == true ? 'selected' : ''%> >Django</option>
+                                <option <%= userinfo.skills.includes('Data Analytics') == true ? 'selected' : ''%> >Data Analytics</option>
+                                <option <%= userinfo.skills.includes(`Data Science`) == true ? 'selected' : ''%> >Data Science</option>
+                                <option <%= userinfo.skills.includes('Designer') == true ? 'selected' : ''%> >Designer</option>
+                                <option <%= userinfo.skills.includes('Frontend developer') == true ? 'selected' : ''%> >Frontend developer</option>
                                 <option <%= userinfo.skills.includes('Java') == true ? 'selected' : ''%> >Java</option>
                                 <option <%= userinfo.skills.includes('Javascript') == true ? 'selected' : ''%> >Javascript</option>
+                                <option <%= userinfo.skills.includes('Machine Learning') == true ? 'selected' : ''%> >Machine Learning</option>
                                 <option <%= userinfo.skills.includes('Nodejs') == true ? 'selected' : ''%> >Nodejs</option>
-                                <option <%= userinfo.skills.includes('HTML') == true ? 'selected' : ''%> >Frontend</option>
-                                <option <%= userinfo.skills.includes('CSS') == true ? 'selected' : ''%> >Backend</option>
-                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >Web development</option>
-                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >App development</option>
-                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >Angular</option>
+                                <option <%= userinfo.skills.includes('Python') == true ? 'selected' : ''%> >Python</option>
+                                <option <%= userinfo.skills.includes('Web developer') == true ? 'selected' : ''%> >Web developer</option>
                             </select>
                         </div>
 
