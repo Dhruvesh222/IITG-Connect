@@ -211,12 +211,16 @@
                             <label for="skills" class="form-label mt-2">Skills</label>
                             <small class="form-text text-muted">&nbsp; Hold ctrl to select more than one option</small>
                             <select name="skills" id="skills" class="form-select" multiple="multiple">
-                                <option <%= userinfo.skills.includes('HTML') == true ? 'selected' : ''%> > HTML</option>
-                                <option <%= userinfo.skills.includes('CSS') == true ? 'selected' : ''%> >CSS</option>
-                                <option <%= userinfo.skills.includes('Javascript') == true ? 'selected' : ''%> >Javascript</option>
+                                <option <%= userinfo.skills.includes('C/C++') == true ? 'selected' : ''%> >C/C++</option>
                                 <option <%= userinfo.skills.includes('Python') == true ? 'selected' : ''%> >Python</option>
+                                <option <%= userinfo.skills.includes('Java') == true ? 'selected' : ''%> >Java</option>
+                                <option <%= userinfo.skills.includes('Javascript') == true ? 'selected' : ''%> >Javascript</option>
                                 <option <%= userinfo.skills.includes('Nodejs') == true ? 'selected' : ''%> >Nodejs</option>
-                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >mongodb</option>
+                                <option <%= userinfo.skills.includes('HTML') == true ? 'selected' : ''%> >Frontend</option>
+                                <option <%= userinfo.skills.includes('CSS') == true ? 'selected' : ''%> >Backend</option>
+                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >Web development</option>
+                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >App development</option>
+                                <option <%= userinfo.skills.includes('mongodb') == true ? 'selected' : ''%> >Angular</option>
                             </select>
                         </div>
 
