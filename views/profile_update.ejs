@@ -142,28 +142,48 @@
                             <div class="valid-feedback" id="contactvalid"></div>
                         </div>
                         <div class="form-group">
-                            <label for="branch" class="form-label mt-2">Branch</label>
-                            <select name="branch" id="branch" class="form-select">
-                                <% if(userinfo.branch){ %>
-                                    <option selected disabled hidden><%= userinfo.branch %></option>
-                                <% } %>
-                                <option>CSE</option>
-                                <option>MnC</option>
-                                <option>ECE</option>
-                                <option>EEE</option>
-                                <option>BSBE</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="degree" class="form-label mt-2">Degree</label>
                             <select name="degree" id="degree" class="form-select">
                                 <% if( userinfo.degree){ %>
                                     <option selected disabled hidden><%= userinfo.degree %></option>
                                 <% } %>
-                                <option>M.Tech</option>
                                 <option>B.Tech</option>
-                                <option>Ph.D</option>
-                                <option>Research Scholar</option>
+                                <option>B.Des</option>
+                                <option>M.A.</option>
+                                <option>M.Sc.</option>
+                                <option>M.Tech</option>
+                                <option>M.Des</option>
+                                <option>MSR</option>
+                                <option>PhD</option>
+                                <option>Dual Degree</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="branch" class="form-label mt-2">Branch</label>
+                            <select name="branch" id="branch" class="form-select">
+                                <% if(userinfo.branch){ %>
+                                    <option selected disabled hidden><%= userinfo.branch %></option>
+                                <% } %>
+                                <option>Biotechnology</option>
+                                <option>Chemical</option>
+                                <option>Chemical science and Technology</option>
+                                <option>Civil Engineering</option>
+                                <option>Computer Science and Engineering</option>
+                                <option>Electronics & Electrical Engineering</option>
+                                <option>Electronics & Communication Engineering</option>
+                                <option>Mathematics and Computing</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Engineering Physics</option>
+                                <option>Data Science and Artificial Intelligence</option>
+                                <option>Design</option>
+                                <option>M.Sc Phsics</option>
+                                <option>M.Sc Chemistry</option>
+                                <option>M.Sc Mathematics and Computing</option>
+                                <option>MA in Developmental Studies</option>
+                                <option>MSR in Energy</option>
+                                <option>MSR in E-Mobility</option>
+                                <option>MSR in Disaster Management</option>
+                                <option>PhD in physics</option>
                             </select>
                         </div>
                         <div class="form-group form-field">
