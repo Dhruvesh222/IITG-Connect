@@ -214,6 +214,64 @@ contact.addEventListener('input', () => {
 
 
 
+
+let email = document.getElementById('email');
+let username = document.getElementById('name');
+let emailvalid = document.getElementById('emailvalid');
+let emailinvalid = document.getElementById('emailinvalid');
+let namevalid = document.getElementById('namevalid');
+let nameinvalid = document.getElementById('nameinvalid');
+let filledName = true;
+let filledEmail = true;
+
+username.addEventListener('input', () => {
+    // console.log('name is blurred');
+    // let regex = /^([a-zA-Z])([0-9a-zA-z]{1,10})$/;
+    let regex = /^([a-zA-Z]+)([a-zA-Z_ ]+)$/;
+    if (regex.test(username.value)) {
+        // console.log('it is valid username');
+        username.classList.add('is-valid');
+        username.classList.remove('is-invalid');
+        namevalid.innerHTML = `
+        looks good !
+        `;
+        filledName = true;
+    } else {
+        // console.log('it is invalid username');
+        username.classList.remove('is-valid');
+        username.classList.add('is-invalid');
+        nameinvalid.innerHTML = `
+        Your name must not contain a number and should be atleast 2 characters long
+        `;
+        filledName = false;
+    }
+    
+})
+
+email.addEventListener('input', () => {
+    // console.log('email is blurred');
+    let regex = /^([a-z]+)([a-z.]*)@(iitg.ac.in([_])*)$/;
+    if (regex.test(email.value)) {
+        // console.log('valid email');
+        email.classList.add('is-valid');
+        email.classList.remove('is-invalid');
+        emailvalid.innerHTML = `
+        looks good !
+        `;
+        filledEmail = true;
+    } else {
+        // console.log('Invalid email');
+        email.classList.remove('is-valid');
+        email.classList.add('is-invalid');
+        emailinvalid.innerHTML = `
+        please enter your valid IITG Outlook id
+        `;
+        filledEmail = false;
+    }
+})
+let updatebtn = document.getElementById('updatebtn');
+let updatebtn1 = document.getElementById('updatebtn1');
+
 function check(){
     let valid = filledcodeforces && filledcodechef && filledgithub && filledinsta && filledfacebook && filledlinkedin && filledcontact;
     if(valid){
@@ -222,8 +280,16 @@ function check(){
         updatebtn.disabled = true;
     }
 }
+function check1(){
+    let valid = filledName && filledEmail;
+    if(valid){
+        updatebtn1.disabled = false;
+    }else{
+        updatebtn1.disabled = true;
+    }
+}
 
 setInterval(() => {
     check();
+    check1();
 }, 1);
-

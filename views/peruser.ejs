@@ -14,21 +14,24 @@
                         <div class="form-group ">
                             <label for="oldpassword" class="form-label mt-2">Old Password</label>
                             <input type="password" class="form-control" id="oldpasswrod" name="oldpassword"
-                                placeholder="Enter old password" value="<%= typeof userinfo!= 'undefined' ? `` : `` %>">
+                                placeholder="Enter old password">
                         </div>
                         <div class="form-group ">
                             <label for="password" class="form-label mt-2">New Password</label>
-                            <input type="password" class="form-control" id="passwrod" name="password"
-                                placeholder="Enter new password" value="<%= typeof userinfo!= 'undefined' ? `` : `` %>">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Enter new password" >
+                            <div class="invalid-feedback" id="passwordinvalid"></div>
+                            <div class="valid-feedback" id="passwordvalid"></div>
                         </div>
                         <div class="form-group ">
                             <label for="password1" class="form-label mt-2">Confirm Password</label>
                             <input type="password" class="form-control" id="password1" name="password1"
                                 placeholder="Confirm new password" value="<%= typeof userinfo!= 'undefined' ? `` : `` %>">
+                            <div class="invalid-feedback" id="password2invalid"></div>
+                            <div class="valid-feedback" id="password2valid"></div>
                         </div>
                         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                        <button type="submit" class="btn btn-primary mt-2">Save changes</button>
-
+                        <button type="submit" class="btn btn-primary mt-2" id="passbtn">Save changes</button>
                     </form>
                 </div>
             </div>
@@ -41,8 +44,6 @@
             <div class="row mt-1">
                 <div class="col-md-6 col-12 m-auto ">
                     <div class="card card-body py-1">
-
-                        <!-- <%- include('./partials/messages.ejs') %> -->
                         <%- include('./partials/messages.ejs') %>
                         <img class="m-auto" src="/profile_images/<%= viewUser.profile_image %>" onerror="this.onerror=null;this.src = '/profile_images/default.png';" alt="profile pic"
                             style="border-radius: 50%; width: 200px;height: 200px; object-fit: cover;">
@@ -195,3 +196,6 @@
                 </div>
             </div>
         </div>
+
+
+<script src="/js/passwordupdatevalidation.js"></script>

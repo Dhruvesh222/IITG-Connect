@@ -51,7 +51,7 @@ router.route("/register")
     res.render("register", { userinfo: req.userinfo });
   })
   .post((req, res,next) => {
-    console.log(req.body);
+    // console.log(req.body);
     const {name,email,password,password2,} = req.body;
     let errors = [];
     // doing validation check
@@ -112,7 +112,7 @@ router.route("/register")
 //logout route
 router.get("/logout", (req, res) => {
   req.logout();
-  req.flash("success_msg", "you have succesfully logged out");
+  req.flash("success_msg", "You have succesfully logged out.");
   res.redirect("/users/login");
 });
 
@@ -151,7 +151,7 @@ router.post('/profile_update',ensureAuthenticated,(req,res)=>{
       codechef
       }
     }).then(result=>{
-      console.log(result);
+      // console.log(result);
       req.flash("success_msg", "You have succesfully updated the profile");
       res.redirect('/users/profile')
     }).catch(err=>console.log(err))
@@ -164,7 +164,7 @@ router.post('/update_name',upload ,ensureAuthenticated,(req,res)=>{
   if(req.file){
     profile_image = req.file.filename;
   }
-  console.log(name);
+  // console.log(name);
   User.findByIdAndUpdate({_id:req.user.id},
     {
       $set: {
@@ -187,7 +187,8 @@ router.post('/update_password',ensureAuthenticated,(req,res)=>{
   bcrypt.compare(oldpassword,req.user.password,(err,ismatched)=>{
     if(err){
       throw err
-    }else if(ismatched){
+    }
+    if(ismatched){
       if(password===password1){
         bcrypt.hash(password,10,(err,hash)=>{
           User.findByIdAndUpdate({_id:req.user.id},
@@ -195,19 +196,23 @@ router.post('/update_password',ensureAuthenticated,(req,res)=>{
               $set: {
                 password:hash
               }
+            },{
+              upsert: true
             }).then(result=>{
               // console.log(result);
-              req.flash("success_msg", "You have succesfully updated the password");
-              res.redirect('/users/profile')
+              req.flash("success_msg", "You have succesfully updated the password.");
+              res.redirect('/users/'+req.user.id);
             }).catch(err=>console.log(err))
         })
       }else{
-        req.flash("error_msg","confirm password didn't matched");
-        res.redirect('/users/profile');
+        // console.log("in else block");
+        req.flash("error_msg","Confirm password didn't matched.");
+        res.redirect('/users/'+req.user.id);
       }
     }else{
-      req.flash("error_msg","old password is wrong");
-      res.redirect('/users/profile');
+      // console.log('old password is wrong');
+      req.flash("error_msg","Old password is wrong.");
+      res.redirect('/users/'+req.user.id);
     }
   })
   
@@ -234,7 +239,7 @@ router.get('/:id',ensureAuthenticated,async(req,res)=>{
     const currentUser = await User.findById(user_id);
     if(viewUser){
       let follow = currentUser.following.includes(view_id);
-      console.log(follow);
+      // console.log(follow);
       res.render('peruser.ejs',{userinfo:req.user,viewUser,follow});
     }else{
       res.redirect('/dashboard');
@@ -258,7 +263,7 @@ router.get('/:id/followers',ensureAuthenticated,async(req,res)=>{
           followersarray.push(element);
         }
       })
-      console.log(followersarray);
+      // console.log(followersarray);
       res.render('follow',{userinfo:req.user,viewUser,usersarray:followersarray,follow:"followers"});
     }else{
       res.redirect('/dashboard');
@@ -294,13 +299,13 @@ router.get('/:id/followings',ensureAuthenticated,async(req,res)=>{
 router.post('/:id/follow',ensureAuthenticated,async (req,res)=>{
   const view_id = req.params.id;
   const user_id = req.user._id.toString();
-  console.log(view_id);
-  console.log(user_id);
+  // console.log(view_id);
+  // console.log(user_id);
   try{
     const viewUser = await User.findById(view_id);
     const currentUser = await User.findById(user_id);
-    console.log(viewUser);
-    console.log(currentUser);
+    // console.log(viewUser);
+    // console.log(currentUser);
     if(!currentUser.following.includes(view_id)){
       await currentUser.updateOne({$push: {following : view_id}});
       await viewUser.updateOne({$push: {followers : user_id}});

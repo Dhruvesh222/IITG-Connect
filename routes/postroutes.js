@@ -19,7 +19,7 @@ router.post('/',ensureAuthenticated,(req,res)=>{
     const newpost = new Post({title,description,user_id,author});
     newpost.save()
     .then(post=>{
-        console.log(post);
+        // console.log(post);
         req.flash("success_msg","your blog has been posted successfully");
         res.redirect('/users/'+req.user._id.toString()+"/posts");
     }).catch(err=>{
@@ -36,7 +36,7 @@ router.get('/:id',ensureAuthenticated,async(req,res)=>{
         const post = await Post.findById(post_id);
         const view_id = post.user_id;
         const viewUser = await User.findById(view_id);
-        console.log(post);
+        // console.log(post);
         res.render("postdetails",{userinfo:req.user,post,viewUser});
     }catch(err){
         console.log(err);
@@ -53,7 +53,7 @@ router.get('/:id/update',ensureAuthenticated,async(req,res)=>{
             res.redirect("/posts/"+post_id);
         }
         // const viewUser = await User.findById(view_id);
-        console.log(post);
+        // console.log(post);
         res.render("create_post",{userinfo:req.user,postinfo:post});
     }catch(err){
         console.log(err);

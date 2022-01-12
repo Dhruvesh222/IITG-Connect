@@ -26,6 +26,8 @@
                                 placeholder="Enter Name"
                                 value="<%= typeof userinfo!= 'undefined' ? userinfo.name : `` %>"   
                             >
+                            <div class="invalid-feedback" id="nameinvalid"></div>
+                            <div class="valid-feedback" id="namevalid"></div>
                       </div>
                     <div class="form-group ">
                           <label for="email" class="form-label mt-2">Email</label>
@@ -37,6 +39,8 @@
                                 placeholder="Enter Name"
                                 value="<%= typeof userinfo!= 'undefined' ? userinfo.email : `` %>"   
                             >
+                            <div class="invalid-feedback" id="emailinvalid"></div>
+                            <div class="valid-feedback" id="emailvalid"></div>
                       </div>
                     <div class="form-group ">
                           <label for="profileImage_file" class="form-label mt-2">profile image</label>
@@ -48,7 +52,7 @@
                             >
                       </div>
                           <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    <button type="submit" class="btn btn-primary mt-2">Save changes</button>
+                    <button type="submit" class="btn btn-primary mt-2" id="updatebtn1">Save changes</button>
                     
                 </form>
             </div>
