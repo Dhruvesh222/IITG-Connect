@@ -152,7 +152,7 @@ router.post('/profile_update',ensureAuthenticated,(req,res)=>{
       }
     }).then(result=>{
       console.log(result);
-      req.flash("success_msg", "you have succesfully updated the profile");
+      req.flash("success_msg", "You have succesfully updated the profile");
       res.redirect('/users/profile')
     }).catch(err=>console.log(err))
 })
@@ -176,7 +176,7 @@ router.post('/update_name',upload ,ensureAuthenticated,(req,res)=>{
       upsert: true
     }).then(result=>{
       // console.log(result);
-      req.flash("success_msg", "you have succesfully updated the profile");
+      req.flash("success_msg", "You have succesfully updated the profile");
       res.redirect('/users/profile_update')
     }).catch(err=>console.log(err))
 })
@@ -197,7 +197,7 @@ router.post('/update_password',ensureAuthenticated,(req,res)=>{
               }
             }).then(result=>{
               // console.log(result);
-              req.flash("success_msg", "you have succesfully updated the password");
+              req.flash("success_msg", "You have succesfully updated the password");
               res.redirect('/users/profile')
             }).catch(err=>console.log(err))
         })
@@ -304,7 +304,7 @@ router.post('/:id/follow',ensureAuthenticated,async (req,res)=>{
     if(!currentUser.following.includes(view_id)){
       await currentUser.updateOne({$push: {following : view_id}});
       await viewUser.updateOne({$push: {followers : user_id}});
-      req.flash("success_msg","u started following "+viewUser.name);
+      req.flash("success_msg","You started following "+viewUser.name);
     }
     res.redirect('/users/'+view_id);
   }catch(err){ 
@@ -321,7 +321,7 @@ router.post('/:id/unfollow',ensureAuthenticated,async (req,res)=>{
     if(currentUser.following.includes(view_id)){
       await currentUser.updateOne({$pull: {following : view_id}});
       await viewUser.updateOne({$pull: {followers : user_id}});
-      req.flash("success_msg","u unfollowed "+viewUser.name);
+      req.flash("success_msg","You unfollowed "+viewUser.name);
     }
     res.redirect('/users/'+view_id);
   }catch(err){ 
