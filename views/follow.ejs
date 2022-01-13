@@ -17,7 +17,7 @@
                 <a href="/users/<%= user.id %>" style="text-decoration: none;">
                     <div class="user-wrap alert  mt-1 py-2 px-1 forsearch">
                         <div class="user-img">
-                            <img src="/profile_images/<%= user.profile_image %>" alt="" width="100%" >
+                            <img src="/profile_images/<%= user.profile_image %>" onerror="this.onerror=null;this.src = '/profile_images/default.png';" alt="" width="100%" >
                             <div class="dancing-border"></div>
                         </div>
                         <div class="user-info ">
