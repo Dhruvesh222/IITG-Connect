@@ -47,7 +47,7 @@ username.addEventListener('blur', () => {
 
 email.addEventListener('blur', () => {
     // console.log('email is blurred');
-    let regex = /^([a-z]+)([a-z.]*)@(iitg.ac.in([_])*)$/;
+    let regex = /^([a-z]+)([a-z.0-9]*)@(iitg.ac.in([_])*)$/;
     if (regex.test(email.value)) {
         // console.log('valid email');
         email.classList.add('is-valid');
