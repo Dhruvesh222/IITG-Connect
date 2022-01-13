@@ -113,7 +113,7 @@ router.route("/register")
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "You have succesfully logged out.");
-  res.redirect("/users/login");
+  res.redirect("/");
 });
 
 // profile route (only after login ensured)
